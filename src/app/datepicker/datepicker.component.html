@@ -1,0 +1,18 @@
+<ion-row *ngIf="!isLoading">
+  <ion-col class="ion-text-center" sizeLg="6" offsetLg="3" sizeMd="8" offsetMd="2">
+    <ion-input type="text" placeholder="Start Date" value="{{ dateFromString | date: 'dd-MM-yyyy' }}" id="dateFrom"><b>Start</b></ion-input>
+    <ion-popover trigger="dateFrom" size="auto">
+      <ng-template>
+        <ion-datetime name="dateFrom" presentation="date" [min]="minDate" [max]="maxDate" [(ngModel)]="dateFromString"></ion-datetime>
+      </ng-template>
+    </ion-popover>
+    <ion-input type="text" placeholder="End Date" value="{{ dateToString | date: 'dd-MM-yyyy' }}" id="dateTo"><b>End</b></ion-input>
+    <ion-popover trigger="dateTo" size="auto">
+      <ng-template>
+        <ion-datetime name="dateTo" presentation="date" [min]="minDate" [max]="maxDate" [(ngModel)]="dateToString"></ion-datetime>
+      </ng-template>
+    </ion-popover>
+
+
+
+  </ion-col>
